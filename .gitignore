@@ -1,0 +1,15 @@
+# Vercel
+.vercel
+
+# Entorno (nunca commitear)
+.env*
+!.env.example
+
+# SO / editores
+.DS_Store
+Thumbs.db
+.vscode/settings.json
+.idea/
+
+# Claude Code (configuración local)
+.claude/settings.local.json
