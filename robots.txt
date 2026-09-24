@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://norvanda-fisioterapia.vercel.app/sitemap.xml

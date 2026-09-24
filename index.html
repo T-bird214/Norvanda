@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Norvanda Fisioterapia — Tecnología premium para tu práctica clínica</title>
+<meta name="description" content="Norvanda Fisioterapia equipa clínicas, centros de rehabilitación e instituciones con tecnología premium, respaldo clínico-técnico y un centro de demostración para decidir con confianza.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://norvanda-fisioterapia.vercel.app/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Norvanda Fisioterapia — Tecnología premium para tu práctica clínica">
+<meta property="og:description" content="Equipamiento, respaldo clínico-técnico y centro de demostración para clínicas, centros de rehabilitación e instituciones.">
+<meta property="og:image" content="https://norvanda-fisioterapia.vercel.app/assets/logo-full.png">
+<meta property="og:locale" content="es_GT">
+<link rel="icon" type="image/png" href="/assets/favicon-512.png">
+<link rel="apple-touch-icon" href="/assets/favicon-512.png">
+<meta name="theme-color" content="#0A2C5C">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MedicalBusiness","name":"Norvanda Fisioterapia","description":"Tecnología, equipamiento y respaldo clínico-técnico para fisioterapia y rehabilitación en Guatemala.","areaServed":{"@type":"Country","name":"Guatemala"},"medicalSpecialty":"Physiotherapy"}
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root{
+  --navy:#0A2C5C; --navy-2:#123a72; --lime:#98C824; --lime-2:#7fab1d;
+  --ink:#12161C; --slate:#5B6472; --slate-lt:#9aa4b2; --line:#E3E7EC;
+  --mist:#F4F6F8; --paper:#FBFCFD; --white:#FFFFFF;
+  --glass-lt:rgba(255,255,255,0.58); --glass-brd-lt:rgba(255,255,255,0.65);
+  --glass-dk:rgba(255,255,255,0.07); --glass-brd-dk:rgba(255,255,255,0.16);
+  --font-d:'Space Grotesk',Arial,sans-serif; --font-b:'Inter',Arial,sans-serif;
+  --r-sm:10px; --r-md:18px; --r-lg:28px;
+  --shadow:0 20px 50px rgba(10,44,92,0.14), 0 4px 14px rgba(10,44,92,0.08);
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} *{animation:none !important; transition:none !important;} }
+body{font-family:var(--font-b); color:var(--ink); background:var(--paper); line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+img{max-width:100%; display:block;}
+a{color:inherit; text-decoration:none;}
+button{font-family:inherit; cursor:pointer;}
+h1,h2,h3{font-family:var(--font-d); color:var(--navy); letter-spacing:-0.01em;}
+.wrap{max-width:1180px; margin:0 auto; padding:0 28px; position:relative; z-index:2;}
+.eyebrow{font-family:var(--font-d); font-weight:600; font-size:.74rem; letter-spacing:.16em; text-transform:uppercase; color:var(--lime-2); margin-bottom:16px; display:flex; align-items:center; gap:10px;}
+.eyebrow::before{content:""; width:26px; height:2px; background:var(--lime); display:inline-block; border-radius:2px;}
+.section{padding:120px 0; position:relative;}
+.section-head{max-width:680px; margin-bottom:52px;}
+.section-head p{color:var(--slate); font-size:1.08rem; margin-top:16px; line-height:1.7;}
+.section-alt{background:var(--mist);}
+.center{text-align:center; margin-left:auto; margin-right:auto;}
+.reveal{opacity:0; transform:translateY(26px); transition:opacity .8s cubic-bezier(.2,.6,.2,1), transform .8s cubic-bezier(.2,.6,.2,1);}
+.reveal.is-visible{opacity:1; transform:translateY(0);}
+
+/* HUD grid overlay */
+.hud-grid{position:absolute; inset:0; z-index:0; pointer-events:none;
+  background-image:linear-gradient(rgba(10,44,92,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(10,44,92,0.05) 1px, transparent 1px);
+  background-size:64px 64px; mask-image:radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 75%);}
+.hud-grid.dark{background-image:linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);}
+
+/* organic blobs */
+.blob{position:absolute; border-radius:44% 56% 62% 38% / 45% 42% 58% 55%; filter:blur(46px); opacity:.55; z-index:0; animation:drift 22s ease-in-out infinite;}
+@keyframes drift{0%,100%{transform:translate(0,0) rotate(0deg);} 50%{transform:translate(18px,-24px) rotate(8deg);}}
+
+/* glass */
+.glass{background:var(--glass-lt); backdrop-filter:blur(18px) saturate(160%); -webkit-backdrop-filter:blur(18px) saturate(160%); border:1px solid var(--glass-brd-lt); box-shadow:var(--shadow); border-radius:var(--r-md);}
+.glass-dk{background:var(--glass-dk); backdrop-filter:blur(18px) saturate(160%); -webkit-backdrop-filter:blur(18px) saturate(160%); border:1px solid var(--glass-brd-dk); border-radius:var(--r-md);}
+
+.badge-tag{position:relative; z-index:2;}
+
+/* NAV */
+.nav{position:sticky; top:0; z-index:100; padding:18px 0;}
+.nav-inner{display:flex; align-items:center; justify-content:space-between; padding:14px 22px; border-radius:999px; background:rgba(255,255,255,0.62); backdrop-filter:blur(16px) saturate(160%); -webkit-backdrop-filter:blur(16px) saturate(160%); border:1px solid rgba(255,255,255,0.7); box-shadow:0 8px 30px rgba(10,44,92,0.10);}
+.brand{display:flex; align-items:center; gap:10px;}
+.brand img{height:30px; width:auto;}
+.nav-links{display:flex; gap:8px; list-style:none;}
+.nav-links a{font-size:.88rem; font-weight:600; color:var(--navy); padding:10px 16px; border-radius:999px; transition:background .2s;}
+.nav-links a:hover{background:rgba(10,44,92,0.08);}
+.nav-cta{background:var(--navy); color:var(--white); border:none; border-radius:999px; padding:12px 22px; font-size:.86rem; font-weight:700; transition:transform .2s, box-shadow .2s;}
+.nav-cta:hover{transform:translateY(-2px); box-shadow:0 10px 26px rgba(10,44,92,0.28);}
+.nav-toggle{display:none; background:none; border:none; flex-direction:column; gap:5px; padding:8px;}
+.nav-toggle span{width:22px; height:2px; background:var(--navy); display:block; border-radius:2px;}
+@media (max-width:880px){
+  .nav-links{position:absolute; top:calc(100% + 10px); left:22px; right:22px; flex-direction:column; gap:4px; background:rgba(255,255,255,0.92); backdrop-filter:blur(16px); border-radius:20px; border:1px solid rgba(255,255,255,0.7); box-shadow:0 20px 50px rgba(10,44,92,0.16); padding:10px; max-height:0; overflow:hidden; transition:max-height .3s ease;}
+  .nav-links.open{max-height:360px; padding:14px;}
+  .nav-links a{display:block; padding:14px 16px;}
+  .nav-toggle{display:flex;} .nav-cta{display:none;}
+}
+
+/* HERO */
+.hero{padding:64px 0 40px; position:relative; overflow:hidden;}
+.hero-blob-1{width:520px; height:520px; top:-160px; right:-120px; background:radial-gradient(circle at 30% 30%, var(--lime), transparent 70%);}
+.hero-blob-2{width:420px; height:420px; bottom:-140px; left:-100px; background:radial-gradient(circle at 60% 40%, var(--navy), transparent 70%); opacity:.18;}
+.hero-inner{max-width:760px; padding-top:56px;}
+.hero h1{font-size:clamp(2.3rem,4.8vw,3.8rem); line-height:1.12; font-weight:700; margin-bottom:24px;}
+.hero h1 em{font-style:normal; color:var(--lime-2);}
+.hero .lede{font-size:1.18rem; color:var(--slate); max-width:600px; margin-bottom:36px; line-height:1.7;}
+.hero-ctas{display:flex; gap:16px; flex-wrap:wrap; margin-bottom:24px;}
+.btn-primary{background:var(--navy); color:var(--white); border:none; border-radius:999px; padding:17px 30px; font-weight:700; font-size:.98rem; box-shadow:0 14px 34px rgba(10,44,92,0.28); transition:transform .25s, box-shadow .25s;}
+.btn-primary:hover{transform:translateY(-3px); box-shadow:0 20px 44px rgba(10,44,92,0.34);}
+.btn-primary.glow{box-shadow:0 0 0 0 rgba(152,200,36,0.5), 0 14px 34px rgba(10,44,92,0.28); animation:glow 2.6s ease-in-out infinite;}
+@keyframes glow{0%,100%{box-shadow:0 0 0 0 rgba(152,200,36,0.45), 0 14px 34px rgba(10,44,92,0.28);} 50%{box-shadow:0 0 0 14px rgba(152,200,36,0), 0 14px 34px rgba(10,44,92,0.28);}}
+.btn-ghost{background:rgba(255,255,255,0.5); backdrop-filter:blur(10px); color:var(--navy); border:1px solid rgba(10,44,92,0.18); border-radius:999px; padding:16px 28px; font-weight:600; font-size:.98rem; transition:background .2s, border-color .2s;}
+.btn-ghost:hover{background:rgba(255,255,255,0.85); border-color:var(--navy);}
+
+/* hero visual: floating glass HUD panel */
+.hero-visual{position:relative; height:360px; margin-top:24px;}
+.hud-card{position:absolute; padding:22px 26px; display:flex; align-items:center; gap:14px;}
+.hud-card .dot{width:10px; height:10px; border-radius:50%; background:var(--lime); box-shadow:0 0 0 6px rgba(152,200,36,0.18);}
+.hud-card p{font-size:.92rem; font-weight:600; color:var(--navy);}
+.hud-card span{display:block; font-size:.72rem; color:var(--slate); font-weight:500;}
+.hc1{top:0; left:6%; animation:floaty 7s ease-in-out infinite;}
+.hc2{top:120px; left:38%; animation:floaty 8s ease-in-out infinite 1s;}
+.hc3{top:20px; right:4%; animation:floaty 6.5s ease-in-out infinite .5s;}
+@keyframes floaty{0%,100%{transform:translateY(0);} 50%{transform:translateY(-14px);}}
+
+/* pillars row */
+.pillars{display:flex; gap:24px; margin-top:8px;}
+.pillar{flex:1; padding:32px 26px; display:flex; flex-direction:column; gap:14px;}
+.pillar .ic{width:46px; height:46px; border-radius:12px; background:var(--navy); display:flex; align-items:center; justify-content:center;}
+.pillar h3{font-size:1.15rem; font-weight:600; color:var(--navy);}
+.pillar p{font-size:.94rem; color:var(--slate); line-height:1.6;}
+@media (max-width:860px){ .pillars{flex-direction:column;} }
+
+/* split panels (el cambio) */
+.split{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+.split .panel{padding:44px; display:flex; flex-direction:column; gap:18px;}
+.split .panel.dark{background:var(--navy); border-radius:var(--r-md); color:var(--white);}
+.split .panel.dark h3{color:var(--white);}
+.split .panel.dark p{color:#C9D6E6;}
+.split .panel h3{font-size:1.5rem; font-weight:600;}
+.split .panel p{color:var(--slate); font-size:1.02rem; line-height:1.65;}
+@media (max-width:860px){ .split{grid-template-columns:1fr;} }
+
+/* proof (equipo + centro) */
+.proof-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+.proof-card{padding:44px; display:flex; flex-direction:column; gap:18px;}
+.proof-card h3{font-size:1.5rem; font-weight:600;}
+.proof-card p{color:var(--slate); font-size:1.02rem; line-height:1.65;}
+.proof-cta{align-self:flex-start; margin-top:8px; font-weight:700; color:var(--navy); font-size:.95rem; display:flex; align-items:center; gap:8px; padding-bottom:2px; border-bottom:2px solid var(--lime);}
+@media (max-width:860px){ .proof-grid{grid-template-columns:1fr;} }
+
+/* two paths */
+.paths{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+.path-card{padding:48px 40px; display:flex; flex-direction:column; gap:20px; position:relative; overflow:hidden;}
+.path-card .num{font-family:var(--font-d); font-size:.85rem; font-weight:700; color:var(--lime-2); letter-spacing:.1em;}
+.path-card h3{font-size:1.7rem; font-weight:700; color:var(--navy); line-height:1.25;}
+.path-card p{color:var(--slate); font-size:1.02rem; line-height:1.65;}
+.path-cta{margin-top:10px; align-self:flex-start; background:var(--navy); color:var(--white); border:none; border-radius:999px; padding:13px 24px; font-weight:700; font-size:.9rem; transition:transform .2s;}
+.path-cta:hover{transform:translateY(-2px);}
+@media (max-width:860px){ .paths{grid-template-columns:1fr;} }
+
+/* catalog teaser */
+.cat-head-row{display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap;}
+.cat-hint{display:flex; align-items:center; gap:10px; font-size:.86rem; font-weight:600; color:var(--navy); background:rgba(152,200,36,0.16); padding:10px 18px; border-radius:999px; margin-bottom:10px;}
+.cat-hint svg{flex-shrink:0;}
+.cat-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:24px; perspective:1800px;}
+.flip-card{position:relative; height:440px; cursor:pointer; outline:none;}
+.flip-card:focus-visible .flip-inner{box-shadow:0 0 0 3px var(--lime);}
+.flip-inner{position:relative; width:100%; height:100%; transition:transform .7s cubic-bezier(.4,.2,.2,1); transform-style:preserve-3d; border-radius:var(--r-md); box-shadow:var(--shadow);}
+.flip-card.flipped .flip-inner{transform:rotateY(180deg);}
+.flip-front, .flip-back{position:absolute; inset:0; backface-visibility:hidden; border-radius:var(--r-md); overflow:hidden;}
+.flip-front{display:flex;}
+.flip-front img{width:100%; height:100%; object-fit:cover; transition:transform .6s ease;}
+.flip-card:hover .flip-front img{transform:scale(1.06);}
+.flip-front-overlay{position:absolute; left:0; right:0; bottom:0; padding:24px 22px; background:linear-gradient(180deg, transparent, rgba(10,44,92,0.88) 78%); display:flex; flex-direction:column; gap:4px;}
+.flip-tag{font-family:var(--font-d); font-size:.72rem; font-weight:700; color:var(--lime); letter-spacing:.12em;}
+.flip-front-overlay h3{color:var(--white); font-size:1.28rem; font-weight:700;}
+.flip-front-overlay span{color:#D7E4C9; font-size:.78rem; font-weight:500;}
+.flip-back{transform:rotateY(180deg); background:var(--navy); display:flex; flex-direction:column; justify-content:space-between; padding:32px 28px;}
+.flip-back h3{color:var(--white); font-size:1.3rem; font-weight:700;}
+.flip-back p{color:#C9D6E6; font-size:.92rem; line-height:1.6; margin-top:12px;}
+.flip-cta{align-self:flex-start; background:var(--lime); color:var(--navy); border:none; border-radius:999px; padding:12px 22px; font-weight:700; font-size:.86rem; transition:background .2s, transform .2s;}
+.flip-cta:hover{background:#aede2f; transform:translateY(-2px);}
+@media (max-width:1020px){ .cat-grid{grid-template-columns:1fr 1fr;} .flip-card{height:400px;} }
+@media (max-width:560px){ .cat-grid{grid-template-columns:1fr;} .flip-card{height:360px;} }
+.cat-note{font-size:.85rem; color:var(--slate-lt); font-style:italic; margin-top:28px;}
+
+/* trust */
+.trust-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+.trust-card{padding:36px 30px; display:flex; flex-direction:column; gap:14px;}
+.trust-card .ic{width:44px; height:44px; border-radius:12px; background:rgba(152,200,36,0.16); display:flex; align-items:center; justify-content:center;}
+.trust-card h3{font-size:1.1rem; font-weight:600; color:var(--navy);}
+.trust-card p{font-size:.92rem; color:var(--slate); line-height:1.6;}
+@media (max-width:860px){ .trust-grid{grid-template-columns:1fr;} }
+
+/* final CTA */
+.cta-final{padding:72px; position:relative; overflow:hidden; background:var(--navy); border-radius:36px;}
+.cta-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px; position:relative; z-index:2;}
+.cta-final h2{color:var(--white); font-size:2.6rem;}
+.cta-final .lede{color:#C9D6E6; font-size:1.08rem; line-height:1.7; margin-top:16px;}
+.cta-actions{display:flex; flex-direction:column; gap:14px; margin-top:28px;}
+.cta-action{display:flex; align-items:center; justify-content:space-between; padding:16px 22px; border-radius:14px; background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.16); font-weight:600; color:var(--white); transition:background .2s;}
+.cta-action:hover{background:rgba(255,255,255,0.14);}
+.field{margin-bottom:16px;}
+.field label{display:block; font-size:.78rem; font-weight:600; color:#AFC0D6; margin-bottom:7px;}
+.field input, .field textarea{width:100%; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.2); border-radius:12px; padding:13px 16px; color:var(--white); font-size:.94rem; font-family:inherit;}
+.field textarea{resize:vertical; min-height:80px;}
+.field input::placeholder, .field textarea::placeholder{color:rgba(255,255,255,0.4);}
+.field input:focus, .field textarea:focus{outline:2px solid var(--lime);}
+.submit-btn{background:var(--lime); color:var(--navy); border:none; border-radius:999px; padding:15px 28px; font-weight:700; font-size:.95rem; width:100%; transition:background .2s;}
+.submit-btn:hover{background:#aede2f;}
+.form-msg{margin-top:14px; font-size:.88rem; color:var(--lime); display:none;}
+.form-msg.show{display:block;}
+@media (max-width:860px){ .cta-grid{grid-template-columns:1fr;} .cta-final{padding:44px 28px;} }
+
+/* footer */
+.footer{padding:56px 0 36px;}
+.footer-top{display:flex; justify-content:space-between; align-items:center; margin-bottom:24px; flex-wrap:wrap; gap:16px;}
+.footer-top img{height:24px;}
+.footer-links{display:flex; gap:22px; flex-wrap:wrap;}
+.footer-links a{font-size:.86rem; color:var(--slate); font-weight:500;}
+.footer-fine{font-size:.78rem; color:var(--slate-lt); border-top:1px solid var(--line); padding-top:20px; line-height:1.6;}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="wrap">
+  <div class="nav-inner">
+    <a href="#top" class="brand"><img src="/assets/logo-full.png" alt="Norvanda Fisioterapia"></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#equipo">Equipo</a></li>
+      <li><a href="#catalogo">Catálogo</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <a href="#contacto" class="nav-cta">Hablar con un asesor</a>
+  </div>
+</div></nav>
+
+<header class="hero" id="top">
+  <div class="blob hero-blob-1"></div>
+  <div class="blob hero-blob-2"></div>
+  <div class="hud-grid"></div>
+  <div class="wrap">
+    <div class="hero-inner reveal is-visible">
+      <div class="eyebrow">Norvanda · Fisioterapia y Rehabilitación</div>
+      <h1>Lleva tu práctica clínica al siguiente nivel. <em>Nosotros ponemos la tecnología.</em></h1>
+      <p class="lede">Equipamiento premium, respaldo clínico-técnico y un centro de demostración pensado para que decidas con confianza — no con folletos.</p>
+      <div class="hero-ctas">
+        <a href="#catalogo" class="btn-primary glow">Ver catálogo</a>
+        <a href="#contacto" class="btn-ghost">Hablar con un asesor</a>
+      </div>
+    </div>
+    <div class="hero-visual reveal is-visible">
+      <div class="hud-card glass hc1"><div class="dot"></div><div><p>Respaldo técnico continuo</p><span>Antes, durante y después de instalar</span></div></div>
+      <div class="hud-card glass hc2"><div class="dot"></div><div><p>Centro de demostración</p><span>Prueba antes de decidir</span></div></div>
+      <div class="hud-card glass hc3"><div class="dot"></div><div><p>Tecnología premium</p><span>Respaldada por Norvanda</span></div></div>
+    </div>
+  </div>
+</header>
+
+<section class="section" id="nosotros">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Quiénes somos</div>
+      <h2 style="font-size:2.4rem; font-weight:700;">Una trayectoria consolidada. Una especialidad construida desde cero.</h2>
+      <p>Norvanda es una compañía con presencia en Centroamérica, historial en distribución de equipo médico premium y relaciones de confianza con la comunidad clínica. La línea de Fisioterapia y Rehabilitación nace como una unidad propia y dedicada — pensada, desde el primer día, para acompañar a quienes tratan el movimiento y la recuperación de las personas.</p>
+    </div>
+    <div class="pillars reveal">
+      <div class="pillar glass">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l7 3v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V5l7-3z"/></svg></div>
+        <h3>Respaldo con trayectoria</h3>
+        <p>Una compañía consolidada, no un proveedor improvisado.</p>
+      </div>
+      <div class="pillar glass">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h4l2-7 4 14 2-7h6"/></svg></div>
+        <h3>Especialización real</h3>
+        <p>Un área dedicada exclusivamente a fisioterapia y rehabilitación.</p>
+      </div>
+      <div class="pillar glass">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15 9l-4 2-2 4 4-2z"/></svg></div>
+        <h3>Acompañamiento cercano</h3>
+        <p>Contigo desde la primera visita hasta la puesta en marcha.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="hud-grid"></div>
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <div class="eyebrow center" style="justify-content:center;">Nuestro compromiso</div>
+      <h2 style="font-size:2.4rem; font-weight:700;">Estamos donde se recupera el movimiento.</h2>
+      <p class="center">Cada instalación, cada capacitación y cada visita de soporte tienen el mismo propósito: que la tecnología nunca sea la barrera entre tu criterio clínico y el resultado de tu paciente.</p>
+    </div>
+    <div class="reveal" style="display:flex; justify-content:center; padding:20px 0;">
+      <svg width="420" height="140" viewBox="0 0 420 140" aria-label="Pulso de movimiento continuo">
+        <circle cx="210" cy="70" r="16" fill="none" stroke="#98C824" stroke-width="2" opacity="0.9"><animate attributeName="r" values="16;60;16" dur="4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.9;0;0.9" dur="4s" repeatCount="indefinite"/></circle>
+        <circle cx="210" cy="70" r="16" fill="none" stroke="#98C824" stroke-width="2" opacity="0.6"><animate attributeName="r" values="16;60;16" dur="4s" begin="1.3s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0;0.6" dur="4s" begin="1.3s" repeatCount="indefinite"/></circle>
+        <circle cx="210" cy="70" r="16" fill="none" stroke="#98C824" stroke-width="2" opacity="0.3"><animate attributeName="r" values="16;60;16" dur="4s" begin="2.6s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.3;0;0.3" dur="4s" begin="2.6s" repeatCount="indefinite"/></circle>
+        <circle cx="210" cy="70" r="10" fill="#0A2C5C"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="cambio">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">El cambio que hace posible</div>
+      <h2 style="font-size:2.4rem; font-weight:700;">Atrae a más pacientes. Atiende mejor a los que ya confían en ti.</h2>
+    </div>
+    <div class="split reveal">
+      <div class="panel glass">
+        <h3>Nuevos pacientes</h3>
+        <p>Resultados visibles y una experiencia moderna son, hoy, la razón por la que un paciente elige una clínica sobre otra. El equipo correcto se convierte en una razón concreta para que te recomienden.</p>
+      </div>
+      <div class="panel dark">
+        <h3>Los pacientes que ya tienes</h3>
+        <p>Tiempos de recuperación más consistentes, sesiones más precisas y una experiencia que se siente premium — para quienes ya confiaron en ti primero.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="equipo">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Respaldo clínico y técnico</div>
+      <h2 style="font-size:2.4rem; font-weight:700;">No estás solo en la decisión.</h2>
+    </div>
+    <div class="proof-grid reveal">
+      <div class="proof-card glass">
+        <h3>Equipo especializado</h3>
+        <p>Un equipo clínico y técnico acompaña cada instalación, desde la primera visita de evaluación hasta la puesta en marcha y la capacitación de tu personal.</p>
+        <a href="#contacto" class="proof-cta">Conocer al equipo →</a>
+      </div>
+      <div class="proof-card glass">
+        <h3>Centro de demostración</h3>
+        <p>Un espacio pensado para que pruebes el equipo antes de decidir — con criterio clínico, no con una ficha técnica. Ubicación y agenda de visitas: [POR DEFINIR].</p>
+        <a href="#contacto" class="proof-cta">Conocer el centro de demostración →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="rutas">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Dos formas de avanzar</div>
+      <h2 style="font-size:2.4rem; font-weight:700;">Tú decides por dónde empezar.</h2>
+    </div>
+    <div class="paths reveal">
+      <div class="path-card glass">
+        <p class="num">01</p>
+        <h3>Renueva tu espacio actual</h3>
+        <p>Actualiza el equipo con el que ya trabajas todos los días — sin rehacer tu operación desde cero, sin detener tu agenda.</p>
+        <button class="path-cta" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Conversemos</button>
+      </div>
+      <div class="path-card glass" style="border:1.5px solid rgba(152,200,36,0.5);">
+        <p class="num">02</p>
+        <h3>Equipa con tecnología de vanguardia</h3>
+        <p>Da un salto de nivel con soluciones premium, pensadas para instituciones que buscan diferenciarse desde el primer día.</p>
+        <button class="path-cta" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Conversemos</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="catalogo">
+  <div class="wrap">
+    <div class="cat-head-row reveal">
+      <div class="section-head" style="margin-bottom:0;">
+        <div class="eyebrow">Tecnología que respaldamos</div>
+        <h2 style="font-size:2.4rem; font-weight:700;">Equipo pensado para resultados, no solo para verse bien en una sala.</h2>
+      </div>
+    </div>
+    <div class="cat-hint reveal"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0A2C5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 5v7h7"/></svg> Toca cada tarjeta para conocer más</div>
+    <div class="cat-grid reveal">
+
+      <div class="flip-card" tabindex="0" role="button" aria-label="Electroterapia — tocar para ver más">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="/assets/cat-electro.jpg" alt="Sesión de electroterapia — estimulación muscular aplicada por un profesional">
+            <div class="flip-front-overlay"><span class="flip-tag">01</span><h3>Electroterapia</h3><span>Toca para conocer más</span></div>
+          </div>
+          <div class="flip-back">
+            <div><h3>Electroterapia</h3><p>Manejo del dolor y estimulación muscular de precisión, aplicada bajo criterio clínico profesional.</p></div>
+            <button class="flip-cta" data-cat="Electroterapia">Ver catálogo →</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" tabindex="0" role="button" aria-label="Terapia por radiofrecuencia — tocar para ver más">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="/assets/cat-radiofrecuencia.jpg" alt="Equipo de terapia por radiofrecuencia con panel de control">
+            <div class="flip-front-overlay"><span class="flip-tag">02</span><h3>Terapia por radiofrecuencia</h3><span>Toca para conocer más</span></div>
+          </div>
+          <div class="flip-back">
+            <div><h3>Terapia por radiofrecuencia</h3><p>Recuperación de tejidos con protocolos controlados y parámetros ajustables por sesión.</p></div>
+            <button class="flip-cta" data-cat="Terapia por radiofrecuencia">Ver catálogo →</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" tabindex="0" role="button" aria-label="Evaluación funcional — tocar para ver más">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="/assets/cat-evaluacion.jpg" alt="Equipo de evaluación funcional y fortalecimiento articular">
+            <div class="flip-front-overlay"><span class="flip-tag">03</span><h3>Evaluación funcional</h3><span>Toca para conocer más</span></div>
+          </div>
+          <div class="flip-back">
+            <div><h3>Evaluación funcional</h3><p>Mediciones objetivas de fuerza y rango de movimiento para decisiones clínicas más precisas.</p></div>
+            <button class="flip-cta" data-cat="Evaluación funcional">Ver catálogo →</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" tabindex="0" role="button" aria-label="Recuperación y movilidad — tocar para ver más">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="/assets/cat-recuperacion.jpg" alt="Equipo de movilización articular para recuperación y movilidad">
+            <div class="flip-front-overlay"><span class="flip-tag">04</span><h3>Recuperación y movilidad</h3><span>Toca para conocer más</span></div>
+          </div>
+          <div class="flip-back">
+            <div><h3>Recuperación y movilidad</h3><p>Soluciones para el retorno progresivo a la actividad, con movilización asistida y controlada.</p></div>
+            <button class="flip-cta" data-cat="Recuperación y movilidad">Ver catálogo →</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <p class="cat-note reveal">Imágenes de referencia. Catálogo completo y ficha técnica por línea disponibles al conversar con un asesor — [POR DEFINIR: ficha técnica pública final].</p>
+  </div>
+</section>
+
+<section class="section" id="confianza">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Confianza, desde el primer contacto</div>
+      <h2 style="font-size:2.4rem; font-weight:700;">Tu información, tratada con el mismo cuidado que tus pacientes.</h2>
+    </div>
+    <div class="trust-grid reveal">
+      <div class="trust-card glass">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0A2C5C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg></div>
+        <h3>Confidencialidad</h3>
+        <p>La información de tu clínica o institución se maneja de forma reservada, solo para fines de asesoría comercial.</p>
+      </div>
+      <div class="trust-card glass">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0A2C5C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></div>
+        <h3>Buenas prácticas</h3>
+        <p>Procesos alineados a estándares internacionales de seguridad de la información.</p>
+      </div>
+      <div class="trust-card glass">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0A2C5C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2h9l4 4v16H6z"/><path d="M14 2v5h5"/><path d="M9 13h7M9 17h7"/></svg></div>
+        <h3>Trazabilidad</h3>
+        <p>Cada solicitud de asesoría queda registrada y da seguimiento con una persona responsable.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contacto">
+  <div class="wrap">
+    <div class="cta-final reveal">
+      <div class="hud-grid dark"></div>
+      <div class="cta-grid">
+        <div>
+          <div class="eyebrow" style="color:#98C824;">Siguiente paso</div>
+          <h2>Hablemos de tu próximo paso.</h2>
+          <p class="lede">Cuéntanos un poco sobre tu clínica o institución y un asesor se pondrá en contacto contigo.</p>
+          <div class="cta-actions">
+            <a href="#catalogo" class="cta-action">Ver catálogo <span>→</span></a>
+            <a href="#equipo" class="cta-action">Conocer el centro de demostración <span>→</span></a>
+            <a href="mailto:[email-por-definir]" class="cta-action">Escribir directamente <span>→</span></a>
+          </div>
+        </div>
+        <form id="contactForm">
+          <div class="field"><label for="f-name">Nombre</label><input id="f-name" type="text" placeholder="Tu nombre" required></div>
+          <div class="field"><label for="f-clinic">Clínica o institución</label><input id="f-clinic" type="text" placeholder="Nombre de tu clínica o institución" required></div>
+          <div class="field"><label for="f-email">Correo electrónico</label><input id="f-email" type="email" placeholder="nombre@clinica.com" required></div>
+          <div class="field"><label for="f-msg">Cuéntanos qué necesitas</label><textarea id="f-msg" placeholder="Ej. Quisiera conocer opciones para renovar mi área de electroterapia..."></textarea></div>
+          <button type="submit" class="submit-btn">Solicitar asesoría</button>
+          <div class="form-msg" id="formMsg">Gracias. Un asesor de Norvanda Fisioterapia revisará tu solicitud y se pondrá en contacto contigo.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer"><div class="wrap">
+  <div class="footer-top">
+    <img src="/assets/logo-full.png" alt="Norvanda Fisioterapia">
+    <div class="footer-links">
+      <a href="#nosotros">Nosotros</a>
+      <a href="#equipo">Equipo</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </div>
+  <p class="footer-fine">© 2026 Norvanda Fisioterapia. Todos los derechos reservados. Sitio en desarrollo — información de contacto, catálogo y centro de demostración sujetos a validación final. Datos de contacto: [POR DEFINIR].</p>
+</div></footer>
+
+<script>
+document.getElementById("navToggle").addEventListener("click", ()=> document.getElementById("navLinks").classList.toggle("open"));
+document.querySelectorAll("#navLinks a").forEach(a=> a.addEventListener("click", ()=> document.getElementById("navLinks").classList.remove("open")));
+
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{ if(entry.isIntersecting){ entry.target.classList.add("is-visible"); io.unobserve(entry.target); } });
+}, {threshold:0.12});
+document.querySelectorAll(".reveal").forEach(el=> io.observe(el));
+
+// subtle parallax on hero blobs
+const blobs = document.querySelectorAll(".hero .blob");
+window.addEventListener("scroll", ()=>{
+  const y = window.scrollY;
+  blobs.forEach((b,i)=>{ b.style.transform = "translateY(" + (y * (0.08 + i*0.04)) + "px)"; });
+}, {passive:true});
+
+// flip cards: click/tap to flip, keyboard accessible, CTA routes to contact pre-filled
+document.querySelectorAll(".flip-card").forEach(card=>{
+  const toggle = ()=> card.classList.toggle("flipped");
+  card.addEventListener("click", (e)=>{
+    if(e.target.closest(".flip-cta")) return; // handled separately
+    toggle();
+  });
+  card.addEventListener("keydown", (e)=>{
+    if(e.target.closest(".flip-cta")) return;
+    if(e.key === "Enter" || e.key === " "){ e.preventDefault(); toggle(); }
+  });
+});
+document.querySelectorAll(".flip-cta").forEach(btn=>{
+  btn.addEventListener("click", (e)=>{
+    e.stopPropagation();
+    const cat = btn.dataset.cat;
+    const msg = document.getElementById("f-msg");
+    if(msg){ msg.value = "Quisiera conocer el catálogo de: " + cat; }
+    document.getElementById("contacto").scrollIntoView({behavior:"smooth"});
+    setTimeout(()=>{ if(msg) msg.focus(); }, 500);
+  });
+});
+
+document.getElementById("contactForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  document.getElementById("formMsg").classList.add("show");
+  this.querySelector(".submit-btn").textContent = "Solicitud enviada ✓";
+});
+</script>
+</body>
+</html>
